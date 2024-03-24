@@ -1,0 +1,211 @@
+.under-talk-header{
+		background-color: inherit;
+}
+.alcen{
+	align-items: center;
+}
+.logo{
+	width: 15rem;
+}
+.text-center{
+	text-align: center;
+}
+.center-work-with-us{
+	    justify-content: center;
+    display: flex;
+}
+.main-man{
+	/*width: ;*/
+}
+body{
+		background-color: #FFFCEC !important;
+}
+.navbar-margin{
+		margin-left: 0 !important;
+}
+.nav-item-text{
+		color: black!important;
+		font-size: 16px;
+		font-weight: bold;
+}
+.work-with-us-button{
+  	border-radius: 40px;
+		width: fit-content!important;
+		background-color: black!important;
+		color: white!important;
+		padding: 16px 28px 16px 28px !important;
+		gap: 10px;
+}
+
+.work-with-us-button-in-text{
+	border-radius: 22px;
+	width: fit-content!important;
+	background-color: black!important;
+	color: white!important;
+	text-decoration:none;
+	padding: 10px 28px 10px 28px !important;
+	gap: 10px;
+}
+
+/*.f-size:h2{*/
+/*	font-size: 70px;*/
+/*}*/
+/*==================================================stage 1==================================================*/
+.call-center-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.montserrat{
+	font-family: 'Montserrat';
+	font-weight: 600;
+	text-align: left;
+}
+
+.call-center-text {
+  flex: 1;
+  margin-right: 2rem;
+}
+.call-center-1{
+	font-size: 60px;
+}
+.call-center-2{
+	font-size: 20px;
+	//styleName: B1;
+	font-family: Montserrat;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 26px;
+	text-align: left;
+
+}
+/*==================================================glider-card==================================================*/
+.call-center-glider{
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+}
+.glider-card{
+	background-color: #A3E3EA;
+	width: 35rem;
+	height: 10rem;
+	padding: 20px 36px 20px 36px;
+	border-radius: 20px;
+	margin-top: 2rem;
+
+}
+.glider-card-row{
+	width: fit-content;
+	height: fit-content;
+}
+.glider-card-icon{
+	width: 82px!important;
+	height: 82px!important;
+}
+.glider-card-icon-div{
+	width: 82px!important;
+	height: 82px!important;
+}
+.glider-card-text-div{
+  margin-left: 2.5rem;
+}
+.glider-up-side{
+	width: fit-content;
+	height: fit-content;
+}
+.glider-card-text-1{
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	text-align: left;
+	margin-bottom: 5px;
+
+
+}
+.glider-card-text-2{
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16px;
+	text-align: left;
+	margin: 0;
+
+}
+.glider-down-side{
+	margin-top: 25px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  align-items: center;
+/*  animation: move 3s infinite linear;*/
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.upper-line{
+	display: flex;
+  justify-content: space-between;
+  border-radius: 4px;
+  align-items: center;
+  animation: move 9s infinite linear;
+  background-color: rgba(0, 0, 0, 0.6);
+      height: 6px;
+    z-index: 2;
+    position: relative;
+    top: 8px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 3;
+}
+.dot:active{
+  background-color: black;
+}
+.glider-card-image-1{
+  background-image: url('../img/glider-card-1.png');
+}
+.glider-card-image-2{
+  background-image: url('../img/glider-card-2.png');
+}
+.glider-card-image-3{
+  background-image: url('../img/glider-card-3.png');
+}
+
+
+@keyframes move {
+  0% {
+  	width: 0%;
+  }
+
+  33% {
+  	width: 33%;
+  }
+
+  66% {
+  	width: 66%;
+  }
+
+  100% {
+  	width: 100%;
+  }
+}
+
+.f-size-6{
+    font-size: 64px;
+    text-align: left;
+}
+.f-size-7{
+    font-size: 7vw;
+    text-align: left;
+}
+.main_man{
+	width: 45rem!important;
+}

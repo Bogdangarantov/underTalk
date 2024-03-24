@@ -2,9 +2,124 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>UnderTalk</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </head>
 <body>
+<header class="under-talk-header navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid alcen">
+    <a class="navbar-brand" href="#"><img class="logo" src="../static/img/logo.png"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-margin " id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item nav-item-text montserrat text-center">
+          <a class="nav-link" href="#">Користь</a>
+        </li>
+        <li class="nav-item nav-item-text montserrat text-center">
+          <a class="nav-link" href="#">Переваги</a>
+        </li>
+        <li class="nav-item nav-item-text montserrat text-center">
+          <a class="nav-link" href="#">Відгуки</a>
+        </li>
+        <li class="nav-item nav-item-text montserrat text-center">
+          <a class="nav-link" href="#">Кейси</a>
+        </li>
+        <li class="nav-item nav-item-text montserrat text-center">
+          <a class="nav-link" href="#">Тарифи</a>
+        </li>
+      </ul>
+      <ul class="navbar-margin nav-item-text navbar-nav text-center">
+        <li class="nav-item center-work-with-us">
+          <a class="nav-link work-with-us-button" href="#">  Працювати з нами  </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="call-center-container container">
+  <div class="call-center-text row">
+    <p class="montserrat call-center-1">CALL-Центр який збільшує прибуток</p>
+    <p class=" call-center-2">Ми аутсорсинговий call-центр, Ми створені, щоб працювати на збільшення вашого прибутку. Наші спеціалісти будуть вашими партнерами в бізнесі</p>
+    <a class="work-with-us-button-in-text cta-button" href="#">Працювати з нами</a>
+    <div class="call-center-glider">
+      <div class="glider-card">
+        <div class="glider-up-side">
+          <div class="row glider-card-row">
+            <div class="glider-card-icon-div">
+            <img class="glider-card-icon glider-card-image-1" src="../static/img/glider-card-1.png">
+          </div>
+            <div class="col glider-card-text-div">
+              <p class="glider-card-text-1">Збільшимо середній чек мінімум у 2 рази</p>
+              <p class="glider-card-text-2">Наші стратегії Up-Sell і Cross-Sell максимально стимулюють покупки через індивідуальні підходи до асортименту</p>
+            </div>
+          </div>
+        <div class="glider-down-side">
+          <div class="upper-line"></div>
+          <div class="line">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <!-- <div class="glider-down-side">
+  <div class="line top"></div>
+  <div class="line bottom">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</div> -->
+        </div>
+        </div>
+      </div>
+        
+    </div>
+  </div>
+  <div class="call-center-stats row ">
+    <img class="main_man" src="../static/img/main_man.png">
+  </div>
+</div>
+
+<script>
+    const line = document.querySelector('.line');
+    const image1 = document.querySelector('.glider-card-image-1');
+    const image2 = document.querySelector('.glider-card-image-2');
+    const image3 = document.querySelector('glider-card-image-3');
+
+    const updateImage = (percentage) => {
+      if (percentage ===0){
+          image3.style.display = 'none';
+          image1.style.display = 'block';
+      }else{
+        if (percentage === 33) {
+          image1.style.display = 'none';
+          image2.style.display = 'block';
+        } else if (percentage === 66) {
+          image2.style.display = 'none';
+          image3.style.display = 'block';
+        }
+      }
+    };
+
+    const handleAnimationEvent = (event) => {
+      if (event.target.classList.contains('line')) {
+        const percentage = Math.round((event.animationName.slice(4, -1) / 100) * 100);
+        updateImage(percentage);
+      }
+    };
+
+    line.addEventListener('animationiteration', handleAnimationEvent);
+    line.addEventListener('animationend', handleAnimationEvent);
+
+    // Initial image
+    updateImage(0);
+  </script>
+
 
 </body>
 </html>
