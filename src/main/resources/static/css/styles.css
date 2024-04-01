@@ -152,7 +152,7 @@ body{
   justify-content: space-between;
   border-radius: 4px;
   align-items: center;
-  animation: move 9s infinite linear;
+  animation: move-upper-line  9s infinite linear;
   background-color: rgba(0, 0, 0, 0.6);
       height: 6px;
     z-index: 2;
@@ -169,7 +169,7 @@ body{
 .dot:active{
   background-color: black;
 }
-.glider-card-image-1{
+/*.glider-card-image-1{
   background-image: url('../img/glider-card-1.png');
 }
 .glider-card-image-2{
@@ -178,12 +178,12 @@ body{
 .glider-card-image-3{
   background-image: url('../img/glider-card-3.png');
 }
+*/
 
-
-@keyframes move {
+@keyframes move-upper-line  {
   0% {
   	width: 0%;
-  }
+  }3
 
   33% {
   	width: 33%;
@@ -209,3 +209,102 @@ body{
 .main_man{
 	width: 45rem!important;
 }
+.form-1{
+	justify-content: center;
+	width: 100%;
+	overflow: hidden;
+  padding: 7rem 0 10rem 0;
+}
+.form-1-div{
+	width: 100%;
+}
+.form{
+	background-image: url(../img/div-mask.png);
+  width: 1920px;
+  height: 500px;
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  justify-content: center;
+  display: flex;
+}
+.masked-form{
+	width: 100%;
+	user-select: none;
+}
+.underline{
+	border-bottom: 2px solid black;
+/*	text-decoration: unsderline;*/
+}
+.prefferences{
+	background-color: transparent;
+	text-align: center;
+}
+.prefferences-text-1{
+	font-size: 46px;
+	font-weight: 400;
+	line-height: 46px;
+}
+.prefferences-text-2{
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 26px;
+	text-align: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  max-width: 25%;
+}
+
+.row{
+	border: 0px solid transparent;
+	background-color: transparent;
+}
+.pref-card img{
+	width: 170px;
+  height: 170px;	
+}
+.pref-card{
+	width: 360px;
+	height: 360px;
+  border-radius: 28px;
+}
+.card-1{
+	background-color: #F9F4FF;
+/*	border-color: #BE8AFF ;*/
+	border: 3px solid #BE8AFF;
+
+}
+.card-2{
+	background-color: #E5FFEF;
+/*	border-color: #83DD5B;*/
+	border: 3px solid #83DD5B;
+
+}
+.card-3{
+	background-color: #E7FDFF;
+/*	border-color: #A3E3EA;*/
+	border: 3px solid #A3E3EA;
+
+}
+
+.pref-cards{
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	display: flex;
+
+}
+
+
+.card-image {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 170px;
+    margin-top: 2rem !important;}
+
+
+
+
+

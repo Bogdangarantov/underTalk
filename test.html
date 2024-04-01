@@ -2,76 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-  <style>
-    .container {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  margin: 50px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curved Text</title>
+    <style>
+        .circular-text-container {
+
+width: 200px;
+
+height: 200px;
+
+position: relative;
+
+border-radius: 50%;
+
+overflow: hidden;
+
 }
 
-.shape {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Remove transition property from here */
+.circular-text {
+
+position: absolute;
+
+top: 50%;
+
+left: 50%;
+
+transform: translate(-50%, -50%);
+
+text-align: center;
+
+width: 100%;
+
+height: 100%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+white-space: nowrap;
+
 }
 
-.shape-1 {
-  background-color: red;
+.circular-text::after {
+
+content: '';
+
+display: block;
+
+width: 100%;
+
+height: 100%;
+
+border-radius: 50%;
+
+background: inherit;
+
+position: absolute;
+
+top: 0;
+
+left: 0;
+
+z-index: -1;
+
 }
-
-.shape-2 {
-  background-color: blue;
-  border-radius: 50%;
-}
-
-/* New animation class for the automatic change */
-.shape.active {
-  opacity: 1;
-  animation: changeShape 3s ease-in-out infinite; /* Animation name, duration, timing function, infinite loop */
-}
-
-@keyframes changeShape {
-  0% { opacity: 0; } /* Start hidden */
-  50% { opacity: 1; } /* Show for half the duration */
-  100% { opacity: 0; } /* Hide again */
-}
-
-
-  </style>
+    </style>
 </head>
 <body>
-<div class="container">
-  <div class="shape shape-1">Square 1</div>
-</div>
-<script type="text/javascript">
-  const container = document.querySelector('.container');
-const shapes = container.querySelectorAll('.shape');
+    <div class="circular-text-container">
 
-// Initially activate the first shape (shape-1)
-shapes[0].classList.add('active');
+      <div class="circular-text">
 
-setInterval(() => {
-  // Remove 'active' class from currently active shape
-  const currentActive = container.querySelector('.shape.active');
-  currentActive.classList.remove('active');
+        Your Circular Text Goes Here
 
-  // Toggle 'active' class to the next shape (looping back if necessary)
-  let nextActiveIndex = (currentActive.dataset.index || 0) + 1;
-  if (nextActiveIndex >= shapes.length) nextActiveIndex = 0;
-      shapes[nextActiveIndex].classList.add('active');
-      shapes[nextActiveIndex].dataset.index = nextActiveIndex; // Optional to track index
-    }
-    , 5000); // Change interval to 3000 milliseconds (3 seconds) for automatic change
+      </div>
 
-</script>
-
+    </div>
 </body>
 </html>
