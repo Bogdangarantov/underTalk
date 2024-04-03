@@ -208,6 +208,16 @@ body{
 .main_man{
 	width: 45rem!important;
 }
+.contact-form{
+	top: 45%;
+	left: 60%;
+}
+.man-over-form{
+	z-index: 3;
+}
+.name-input{
+
+}
 .form-1{
 	justify-content: center;
 	width: 100%;
@@ -218,13 +228,12 @@ body{
 	width: 100%;
 }
 .form{
-	background-image: url(../img/div-mask.png);
+	/*background-image: url(../img/div-mask.png);*/
   width: 1920px;
   height: 500px;
   opacity: 1;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  justify-content: center;
   display: flex;
 }
 .masked-form{
@@ -348,13 +357,19 @@ body{
 	flex-wrap: wrap;
 	justify-content: center;
 	display: flex;
-	margin-left: 8rem;
-	margin-right: 10rem;
 }
 .p-card{
 	margin-left: 2rem;
+	width: 315px!important;
+	height: 146px!important;
 }
 .cards-row-1{
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	display: flex;
+	padding-bottom: 1rem;
+}
+.cards-row-2{
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 	display: flex;
@@ -375,6 +390,9 @@ body{
 	text-align: left;
 	padding-left: 0.6rem;
 }
+.prof-card{
+
+}
 .profit-card-1{
 	width: 315px;
 	height: 146px;
@@ -383,22 +401,22 @@ body{
 	border-radius: 20px;
 }
 .profit-card-2{
-	width: 315px;
-	height: 146px;
-	background-color: rgba(249, 244, 255, 1);
-	border: 3px solid rgba(190, 138, 255, 1);
+	/*width: 315px;*/
+	/*height: 146px;*/
+	background-color: rgba(255, 254, 249, 1);
+	border: 3px solid rgba(255, 220, 99, 1);
 	border-radius: 20px;
 }
 .profit-card-3{
-	width: 315px;
-	height: 146px;
-	background-color: rgba(249, 244, 255, 1);
-	border: 3px solid rgba(190, 138, 255, 1);
+	/*width: 315px;*/
+	/*height: 146px;*/
+	background-color: rgba(229, 255, 238, 1);
+	border: 3px solid rgba(131, 221, 91, 1);
 	border-radius: 20px;
 }
 .profit-card-4{
-	width: 315px;
-	height: 146px;
+	/*width: 315px;*/
+	/*height: 146px;*/
 	background-color: rgba(249, 244, 255, 1);
 	border: 3px solid rgba(190, 138, 255, 1);
 	border-radius: 20px;
@@ -408,3 +426,25 @@ body{
 .profit-card-7{}
 
 
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
