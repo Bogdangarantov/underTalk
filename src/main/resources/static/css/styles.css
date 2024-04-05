@@ -30,11 +30,11 @@ body{
 }
 .work-with-us-button{
   	border-radius: 40px;
-		width: fit-content!important;
-		background-color: black!important;
-		color: white!important;
-		padding: 16px 28px 16px 28px !important;
-		gap: 10px;
+	width: fit-content!important;
+	background-color: black!important;
+	color: white!important;
+	padding: 16px 28px 16px 28px !important;
+	gap: 10px;
 }
 
 .work-with-us-button-in-text{
@@ -218,11 +218,69 @@ body{
 .name-input{
 
 }
+.form-labels{
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 26px;
+	text-align: center;
+	user-select: none;
+}
+
+.form-group-name{
+	padding-bottom: 1.7rem ;
+}
+.form-group-phone{
+	padding-bottom: 1.1rem ;
+}
+.form-input-name{
+	width: 29rem;
+	display: block;
+	height: 4rem;
+	border: 2px solid black;
+	padding: 25px 26px 25px 26px;
+	gap: 10px;
+	border-radius: 16px;
+	background-color: transparent;
+}
+.form-input-phone{
+	width: 29rem;
+	display: block;
+	height: 4rem;
+	border: 2px solid black;
+	padding: 25px 26px 25px 26px;
+	gap: 10px;
+	border-radius: 16px;
+	background-color: transparent;
+}
+.form-input-name::placeholder {
+	font-family: 'Montserrat';
+	font-weight: 600;
+	text-align: left;
+}
+.form-input-phone::placeholder {
+	font-family: 'Montserrat';
+	font-weight: 600;
+	text-align: left;
+}
+.form-button{
+	border-radius: 40px;
+	border: 1px solid black;
+	width: 30rem;
+	/*width: fit-content!important;*/
+	background-color: black!important;
+	color: white!important;
+	padding: 16px 28px 16px 28px !important;
+	gap: 10px;
+}
+
+.svg-curved-form{
+	z-index: 1;
+}
 .form-1{
 	justify-content: center;
 	width: 100%;
 	overflow: hidden;
-  padding: 7rem 0 10rem 0;
+	padding: 7rem 0 10rem 0;
 }
 .form-1-div{
 	width: 100%;
