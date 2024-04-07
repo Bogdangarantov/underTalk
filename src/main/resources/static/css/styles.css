@@ -30,11 +30,12 @@ body{
 }
 .work-with-us-button{
   	border-radius: 40px;
-	width: fit-content!important;
-	background-color: black!important;
-	color: white!important;
-	padding: 16px 28px 16px 28px !important;
-	gap: 10px;
+		width: fit-content!important;
+		background-color: black!important;
+		color: white!important;
+		padding: 16px 28px 16px 28px !important;
+		gap: 10px;
+		border: 1px solid black;
 }
 
 .work-with-us-button-in-text{

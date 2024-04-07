@@ -165,6 +165,10 @@ const work_with_us_3 = document.getElementById("work-with-us-3");
 work_with_us_3.addEventListener("click", () => {
   location.href = "#form-2"
 });
+const work_with_us_3_mini = document.getElementById("work-with-us-footer-mini");
+work_with_us_3_mini.addEventListener("click", () => {
+  location.href = "#form-2"
+});
 
 
 
@@ -216,9 +220,11 @@ for (let i = 0 ; i < span_mini1.length;i++){
 let submit_button_1 = document.getElementById("submit-modal-form-1")
 submit_button_1.addEventListener("click",function(event){
   event.preventDefault()
+  let modal = document.getElementById("modal-1")
+  modal.style.display="none"
   let input_name_1 = document.getElementById("form-modal-input-name-1")
   let input_phone_1 = document.getElementById("input-modal-phone-1")
-  fetchIt(input_name_1.value,input_phone_1.value)
+  fetch_tarif(input_name_1.value,input_phone_1.value,"Базовий")
   input_name_1.value = ""
   input_phone_1.value = ""
 })
@@ -226,9 +232,11 @@ submit_button_1.addEventListener("click",function(event){
 let submit_button_1_mini = document.getElementById("submit-modal-form-mini-1")
 submit_button_1_mini.addEventListener("click",function(event){
   event.preventDefault()
+  let modal = document.getElementById("modal-1-mini")
+  modal.style.display="none"
   let input_name_1 = document.getElementById("form-modal-input-name-mini-1")
   let input_phone_1 = document.getElementById("input-modal-phone-mini-1")
-  fetchIt(input_name_1.value,input_phone_1.value)
+  fetch_tarif(input_name_1.value,input_phone_1.value,"Базовий")
   input_name_1.value = ""
   input_phone_1.value = ""
 })
@@ -282,19 +290,23 @@ for (let i = 0 ; i < span2_mini.length;i++){
 let submit_button_2 = document.getElementById("submit-modal-form-2")
 submit_button_2.addEventListener("click",function(event){
   event.preventDefault()
+  let modal =  document.getElementById("modal-2")
+  modal.style.display="none"
   let input_name_2 = document.getElementById("form-modal-input-name-2")
   let input_phone_2 = document.getElementById("input-modal-phone-2")
-  fetchIt(input_name_2.value,input_phone_2.value)
+  fetch_tarif(input_name_2.value,input_phone_2.value,"Оптимальний")
   input_name_2.value = ""
   input_phone_2.value = ""
 })
 
 let submit_button_2_mini = document.getElementById("submit-modal-form-mini-2")
-submit_button_2.addEventListener("click",function(event){
+submit_button_2_mini.addEventListener("click",function(event){
   event.preventDefault()
+  let modal = document.getElementById("modal-2-mini")
+  modal.style.display="none"
   let input_name_2 = document.getElementById("form-modal-input-name-mini-2")
   let input_phone_2 = document.getElementById("input-modal-phone-mini-2")
-  fetchIt(input_name_2.value,input_phone_2.value)
+  fetch_tarif(input_name_2.value,input_phone_2.value,"Оптимальний")
   input_name_2.value = ""
   input_phone_2.value = ""
 })
@@ -347,18 +359,22 @@ let submit_button_mini_3 = document.getElementById("submit-modal-form-mini-3")
 
 submit_button_3.addEventListener("click",function(event){
   event.preventDefault()
+  let modal = document.getElementById("modal-3")
+  modal.style.display="none"
   let input_name_3 = document.getElementById("form-modal-input-name-3")
   let input_phone_3 = document.getElementById("input-modal-phone-3")
-  fetchIt(input_name_3.value,input_phone_3.value)
+  fetch_tarif(input_name_3.value,input_phone_3.value,"Преміум")
   input_name_3.value = ""
   input_phone_3.value = ""
 })
 
 submit_button_mini_3.addEventListener("click",function(event){
   event.preventDefault()
+  let modal = document.getElementById("modal-3-mini")
+  modal.style.display="none"
   let input_name_3 = document.getElementById("form-modal-input-name-mini-3")
   let input_phone_3 = document.getElementById("input-modal-phone-mini-3")
-  fetchIt(input_name_3.value,input_phone_3.value)
+  fetch_tarif(input_name_3.value,input_phone_3.value,"Преміум")
   input_name_3.value = ""
   input_phone_3.value = ""
 })
@@ -414,15 +430,62 @@ window.onclick = function(event) {
 
 }
 
-function fetchIt(name,phone){
-  let modal_success = document.getElementById("modal-success")
-  let modal_success_mini = document.getElementById("modal-success-mini")
-  if (document.documentElement.clientWidth>=991) {
-    modal_success.style.display = "flex";
+function fetch_tarif(name,phone,tariff){
+    if (name!=="" && phone!==""){
+      if(phone.length!==13){
+      alert('Введіть номер в форматі +380960001112');
+      }else{
+        let modal_success = document.getElementById("modal-success")
+        let modal_success_mini = document.getElementById("modal-success-mini")
+        if (document.documentElement.clientWidth>=991) {
+          modal_success.style.display = "flex";
+        }else{
+          modal_success_mini.style.display = "flex";
+        }
+        let data= {"name":name,"phone":phone,"tariff":tariff}
+        fetch("/tariff", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        })
+        .catch(error => {
+          // Handle any errors
+          console.error(error);
+        });
+      }
   }else{
-    modal_success_mini.style.display = "flex";
+    alert('Заповніть будь ласка усі поля');
   }
-  console.log(name)
-  console.log(phone)
+}
 
+function fetchIt(name,phone){
+  if (name!=="" && phone!==""){
+    if(phone.length!==13){
+      alert('Введіть номер в форматі +380960001112');
+    }else{
+      let modal_success = document.getElementById("modal-success")
+      let modal_success_mini = document.getElementById("modal-success-mini")
+      if (document.documentElement.clientWidth>=991) {
+        modal_success.style.display = "flex";
+      }else{
+        modal_success_mini.style.display = "flex";
+      }
+      let data= {"name":name,"phone":phone}
+      fetch("/", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error(error);
+      });
+    }
+  }else{
+    alert('Заповніть будь ласка усі поля');
+  }
 } 
