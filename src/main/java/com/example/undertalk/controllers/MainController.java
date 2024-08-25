@@ -19,7 +19,7 @@ public class MainController {
     @GetMapping("/")
     public String startPage() {
         System.out.println("HERE");
-        return "page";
+        return "page_compressed";
     }
 
     @PostMapping("/")

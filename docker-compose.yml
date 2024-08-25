@@ -1,0 +1,10 @@
+services:
+  app:
+    image: maven:3.8.4-openjdk-17
+    volumes:
+      - ./:/app
+    ports:
+      - "443:443"
+    working_dir: /app
+    restart: always
+    command: "java -jar target/underTalk-0.0.1-SNAPSHOT.jar"
