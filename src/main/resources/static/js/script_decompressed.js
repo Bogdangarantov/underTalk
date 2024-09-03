@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const text2 = document.getElementById("glider-card-text-2")
     const gliderCard = document.getElementById("glider-card")
 
+
     setInterval(function () {
         var width = document.documentElement.clientWidth;
         const upperLineWidth = parseInt(window.getComputedStyle(upperLine).width);
@@ -46,6 +47,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+let phonesInputsList = [
+    "contact-form-phone",
+    "input-phone-1",
+    "input-phone-2",
+    "input-phone-mini-1",
+    "input-phone-mini-2",
+    "input-modal-phone-1",
+    "input-modal-phone-2",
+    "input-modal-phone-3",
+    "input-modal-phone-mini-1",
+    "input-modal-phone-mini-2",
+    "input-modal-phone-mini-3",
+]
+for (let i = 0 ; i < phonesInputsList.length;i ++){
+    document.getElementById(phonesInputsList[i]).addEventListener("focus", function() {
+        if (this.value === "") {
+            this.value = "+380";
+        }
+    });
+
+    document.getElementById(phonesInputsList[i]).addEventListener("click", function() {
+        if (this.value === "") {
+            this.value = "+380";
+        }
+    });
+
+    document.getElementById(phonesInputsList[i]).addEventListener("input", function() {
+        if (this.value === "+380") {
+            this.setSelectionRange(this.value.length, this.value.length); // Keeps cursor at the end of the text
+        }
+    });
+}
+
 
 let isScrolling;
 
@@ -93,14 +128,12 @@ navbar.addEventListener('show.bs.collapse', () => {
 navbar.addEventListener('hide.bs.collapse', () => {
     navbar.style.transitionDuration = '1000ms';
     if (header.classList.contains("nav-color")) {
-        console.log("WATCHING")
         header.classList.remove("nav-color")
     }
 });
 
 let billing1 = document.getElementById("billing-1")
 billing1.addEventListener("click", function () {
-    console.log("HEHEHEHe")
 
 })
 //FORMS
@@ -479,9 +512,9 @@ for (let i = 0; i < close_mini_popup.length; i++) {
     }
 }
 
-
 let submit_button_3 = document.getElementById("submit-modal-form-3")
 let submit_button_mini_3 = document.getElementById("submit-modal-form-mini-3")
+
 
 submit_button_3.addEventListener("click", function (event) {
     event.preventDefault()
@@ -562,8 +595,9 @@ window.onclick = function (event) {
 }
 
 function fetch_tarif(name, phone, tariff) {
+    const regex = /^\+380\d{9}$/;
     if (name !== "" && phone !== "") {
-        if (phone.length !== 13) {
+        if (!regex.test(phone)) {
             alert('Введіть номер в форматі +380960001112');
         } else {
             let modal_success = document.getElementById("modal-success")
@@ -606,9 +640,9 @@ function toggleButtons() {
 }
 
 function fetchIt(name, phone) {
-    console.log(name,phone)
-    if (name !== "" && phone !== "") {
-        if (phone.length !== 13) {
+    const regex = /^\+380\d{9}$/;
+    if (name !== "" && phone !== "" ) {
+        if (!regex.test(phone)) {
             alert('Введіть номер в форматі +380960001112');
         } else {
             let welcome_form = document.getElementById("welcome-form")
@@ -636,5 +670,7 @@ function fetchIt(name, phone) {
         alert('Заповніть будь ласка усі поля');
     }
 }
+
+
 
 
